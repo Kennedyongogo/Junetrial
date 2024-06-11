@@ -1,0 +1,158 @@
+<html>
+    <header>
+        <head>
+            <title>june trials</title>
+            <meta name="viewport" content="width = device-width, initial-scale = 1.o">
+            <meta name="author" content="kennedy oduor">
+            <meta charset="UTF-8">
+        </head>
+    </header>
+    <body>
+        <style>
+            
+            body{
+                background-image: url(pexels-todd-trapani-488382-1420440.jpg);
+                background-size: cover;
+            }
+            ::-webkit-scrollbar {
+             width: 10px;
+            }
+            ::-webkit-scrollbar-thumb{
+                background: #a92e2e;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+                background: #888;
+            }
+            ::-webkit-scrollbar-track{
+                background: whitesmoke;
+            }
+            table {
+    border-collapse: collapse;
+    width: 70%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: 8px;
+}
+tr:nth-child(even){
+    background-color: aqua;
+}
+tr:hover {
+    background-color: blueviolet;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: blue;
+    color: darkorange;
+    text-align: left;
+}
+
+h1{
+     color: red;
+     font-weight: 600;
+}
+.class{
+    color: blue;
+    font-weight: 600;
+}
+#try{
+    color: #a92e2e;
+    font-weight: 600;
+}
+#try1{
+    color: #15a61a;
+    font-weight: 600;
+}
+.paragraph1{
+    color: chartreuse;
+    font-weight: 600;
+}
+.paragraph{
+    color: darkgoldenrod;
+    font-weight: 600;
+}
+        </style>
+        
+        <h1>What Can JavaScript Do?</h1>
+
+        <p class="paragraph">JavaScript can change HTML attribute values.</p>
+        
+        <p class="paragraph1">In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+        <p id="try"></p>
+        <p id="try1">changing element of an HTML</p>
+
+        <button onclick="document.getElementById('try1').innerHTML = ('let give it a try')">click here</button>
+        
+        <button onclick="document.getElementById('my image').src='pic_bulbon.gif'">turn on the light</button>
+        <img id="my image" src="pic_bulboff.gif" alt="bulb gif">
+        <button onclick="document.getElementById('my image').src='pic_bulboff.gif'">turn off the light</button>
+        <p id="demo"></p>
+        <script>
+            window.alert("i tried this today it was fun")
+            function goback() {
+                window.history.back()
+            }
+            function gofoward() {
+                window.history.foward()
+            }
+            function newDoc() {
+                window.location.assign('https://www.w3schools.com')
+            }
+    
+            let a, b, c;
+            a = 4; b = 10; c = a + b;
+            document.getElementById("demo").innerHTML= "the value of c is " + c + "."
+            let x = 10
+            let z = x ** 2;
+            document.getElementById("try").innerHTML= z
+
+        </script>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Friends</th>
+                    <th>location</th>
+                    <th>place of work</th>
+                </tr>
+                <tbody>
+                <tr>
+                    <td>brandon</td>
+                    <td>zimmerman</td>
+                    <td>oakar</td>
+                </tr>
+                <tr>
+                    <td>kennedy</td>
+                    <td>kabiria</td>
+                    <td>oakar</td>
+                </tr>
+                <tr>
+                    <td>ian</td>
+                    <td>Ngara</td>
+                    <td>oakar</td>
+                </tr>
+                <tr>
+                    <td>hillary</td>
+                    <td>rangwe</td>
+                    <td>care</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">name place of stay and place of work for all my friends</td>
+                    </tr>
+                </tfoot>
+            </thead>
+        </table>
+        <button onclick="goback()">back</button>
+        <button onclick="gofoward()">foward</button>
+        <button onclick="window.print()">print this message</button>
+        <button onclick="newDoc()">load new document</button>
+
+        <p>&lt; &lt; &copy;Kennedy june trials &gt; &gt;</p>
+    </body>
+</html>
