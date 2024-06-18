@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+</head>
+<body>
+   <center><h1>PASSENGER COUNT</h1></center> 
+    <span id="totalClicks">0</span>
+    
+    <button onclick="totalClick(1)" id="add">+</button>
+    <button onclick="totalClick(-1)" id="minus">-</button>
+
+    <button onclick="totalClick(0)" id="try">RESET</button>
+    <button id="trees" onclick="save()">SAVE</button>
+    <p id="entries">PREVIOUS ENTRIES </p>
+    <span id="box">
+        <p id="values"></p>
+        <p id="test"></p>
+    </span>
+   
+    <button onclick= "time()" id="tbutton">DETERMINE TIME</button>
+
+
+    <script>
+     function totalClick(click) {
+        const totalClicks = document.getElementById("totalClicks");
+        const sumvalue = parseInt(totalClicks.innerText) + click;
+        totalClicks.textContent = sumvalue;
+       
+
+     // avoid negative:
+     if (sumvalue < 0) {
+     totalClicks.textContent = 0;        
+     }
+       // reset values:
+     if (click === 0) {
+        totalClicks.textContent = 0;
+     }
+    
+     
+    }
+
+    function save() {
+
+        values.innerText = (totalClicks.innerText + "-");  
+        
+    }
+
+    function time() {
+        let total = totalClicks.textContent
+        if(parseInt(total) > 30){
+            test.innerHTML = "Rush Hour"; 
+        }
+       else test.innerHTML = "Morning"; 
+    
+    }
+    
+    </script>
+
+    <style>
+        body {
+            background-image: url(countryside-road-and-yellow-line-with-trees-on-both-sides-curve-of-the-road-photo.jpg);
+            background-size: cover;
+        }
+        
+
+        #try {
+            position: absolute;
+            left: 44%;
+            top: 40%;
+            padding: 8px;
+            width: 10%;
+            cursor: pointer;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: bold;
+        }
+
+        #add {
+            padding: 8px;
+            position: absolute;
+            left: 24%;
+            top: 30%;
+            width: 20%;
+            background-color: blue;
+            color: white;
+            cursor: pointer;
+           
+        }
+
+        #minus {
+            padding: 8px;
+            position: absolute;
+            left: 55%;
+            top: 30%;
+            width: 20%;
+            background-color: crimson;
+            color: white;
+            cursor: pointer;
+           
+        }
+        #totalClicks {
+            padding: 10px;
+            border: 1px solid black;
+            width: 15%;
+            position: absolute;
+            left: 41%;
+            top: 20%;
+            text-align: center;
+        }
+        #trees{
+            position: absolute;
+            bottom: 45%;
+            left: 35%;
+            padding: 10px;
+            width: 30%;
+            color: deeppink;
+            background-color: burlywood;
+            border: 3px solid brown;
+            border-radius: 5%;
+            cursor: pointer;
+        }
+        #entries{
+            position: absolute;
+            bottom:35%;
+            left:40% ;
+            font-weight: bolder;
+            font-size: x-large;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+        }
+        #tbutton {
+            position: absolute;
+            cursor: pointer;
+            bottom: 10%;
+            left: 40%;
+            border: 2px solid black ;
+            width: 20%;
+            padding: 8px;
+            font-size: large;
+        }
+        #box {
+            position: absolute;
+            bottom: 20%;
+            color: yellow;
+            left: 40%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: bold;
+            border: 2px solid rgb(210, 22, 22);
+            width: 20%;
+            height: 15%;
+            text-align: center;
+        }
+    </style>
+    
+</body>
+</html>

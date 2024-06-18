@@ -1,0 +1,70 @@
+<html>
+    <header>
+        <head>
+            <title>thursday trial</title>
+            <meta name="viewport" content="width = device-width initial-scale = 1.0">
+            <meta name="author" content="kennedy">
+            <meta charset="UTF-8">
+        </head>
+    </header>
+    <body>
+        <h1>here we go</h1>
+        <p id="location"></p>
+        <p id="sum"></p>
+        <p id="max"></p>
+        <p id="less"></p>
+        <form onsubmit="return validateForm()" name="myForm">
+            NAME: <input type="text" onfocus="myFunction(this)"><br>
+            PASSWORD: <input type="password" onfocus="myFunction(this)"><br><br>
+            <input type="submit" value="submit">
+        </form>
+        <button onclick="getLocation()">get location</button>
+        <script>
+            const x = document.getElementById("location")
+
+            function getLocation() {
+                if(navigator.geolocation){navigator.geolocation.getCurrentPosition(showPosition);}
+                else {x.innerHTML = "Geolocation is not supported by the browser"}
+            }
+
+            function showPosition (position) {
+                x.innerHTML = "latitude:" + position.coords.latitude + "<br> longitude" + position.coords.longitude;
+            }
+
+            function sumAll(){
+                let sum = 0
+                for(let i = 0; i < arguments.length;i++){
+                    sum += arguments[i]
+                }
+                return sum
+            }
+            document.getElementById("sum").innerHTML = sumAll(20000,30000,20000,15000)
+
+
+            function findMax() {
+                let max = -Infinity
+                for(let i = 0; i < arguments.length; i++){
+                   if(arguments[i] > max) { max = arguments[i] }
+                   }
+                   return max
+            }
+            document.getElementById("max").innerHTML = findMax(2,3,4,5,6,7,8)
+
+           
+
+        
+        function validateForm() {
+            let z = document.forms ["myForm"] [NAME] [PASSWORD].value;
+            if(z == "") {alert ("name must be filled") ("password must be filled");
+            return false;
+        }
+
+        function myFunction(y) {
+          y.style.background = 'red';
+        }
+            
+        }
+
+        </script>
+    </body>
+</html>

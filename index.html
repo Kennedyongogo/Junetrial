@@ -1,4 +1,5 @@
 <html>
+    
     <header>
         <head>
             <title>june trials</title>
@@ -10,10 +11,6 @@
     <body>
         <style>
             
-            body{
-                background-image: url(pexels-todd-trapani-488382-1420440.jpg);
-                background-size: cover;
-            }
             ::-webkit-scrollbar {
              width: 10px;
             }
@@ -82,9 +79,17 @@ h1{
         <p class="paragraph">JavaScript can change HTML attribute values.</p>
         
         <p class="paragraph1">In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+        <p id="give">finding element by id</p>
         <p id="try"></p>
-        <p id="try1">changing element of an HTML</p>
+        <p id="try1">changing element of an HTML</p> 
+        <p>finding element by tag name</p>
 
+        <p id="give1"></p>
+        
+        <p id="write"></p>
+        <p>finding element by class name</p>
+        <h2 class="with">finding elements with class</h2>
+        <p id="that"></p>
         <button onclick="document.getElementById('try1').innerHTML = ('let give it a try')">click here</button>
         
         <button onclick="document.getElementById('my image').src='pic_bulbon.gif'">turn on the light</button>
@@ -93,6 +98,16 @@ h1{
         <p id="demo"></p>
         <script>
             window.alert("i tried this today it was fun")
+
+            const intro = document.getElementsByClassName('with');
+            document.getElementById('that').innerHTML = "for class it turn out: " + intro.innerHTML;
+
+            const element = document.getElementById('give');
+            document.getElementById('give1').innerHTML = "the paragraph is : " + element.innerHTML;
+
+            const y = document.getElementsByTagName('p');
+            document.getElementById('write').innerHTML = 'it turns out to be:' + y[5].innerHTML;
+
             function goback() {
                 window.history.back()
             }
