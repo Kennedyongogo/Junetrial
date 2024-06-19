@@ -7,9 +7,9 @@
     <title>button</title>
 </head>
 <body>
-    
-   <center><h1>PASSENGER COUNT</h1></center> 
-
+   
+   <center><h1>PASSENGER COUNT</h1> </center>
+   <div id="wrapper"> 
     <span id="totalClicks">0</span>
     
     <button onclick="totalClick(1)" id="add">+</button>
@@ -17,14 +17,15 @@
 
     <button onclick="totalClick(0)" id="try">RESET</button>
     <button id="trees" onclick="save()">SAVE</button>
-    <p id="entries">PREVIOUS ENTRIES </p>
-    <span id="box">
+    
+    <div id="box">
+        <p id="entries">PREVIOUS ENTRIES </p>
         <p id="values"></p>
         <p id="test"></p>
-    </span>
+    </div>
    
     <button onclick= "time()" id="tbutton">DETERMINE TIME</button>
-
+    </div>
 
     <script>
      function totalClick(click) {
@@ -44,13 +45,15 @@
     
      
     }
-
+       
+    document.getElementById("trees").addEventListener("mouseover", save);
+    
     function save() {
 
         values.innerText = (totalClicks.innerText + "-");  
         
     }
-
+    document.getElementById("tbutton").addEventListener("mouseover", time)
     function time() {
         let total = totalClicks.textContent
         if(parseInt(total) > 30){
@@ -63,10 +66,7 @@
     </script>
 
     <style>
-        #style{
-            border: 2px solid black;
-            min-height: 50%;
-        }
+    
         body {
             background-image: url(digital-art-artwork-bus-stop-street-japan-hd-wallpaper-preview.jpg);
             background-size: cover;
@@ -135,31 +135,20 @@
         #trees{
             position: absolute;
             bottom: 45%;
-            left: 35%;
+            left: 570px;
             padding: 10px;
-            width: 30%;
-            color: deeppink;
-            background-color: burlywood;
-            border: 3px solid brown;
+            width: 10%;
+            color: black;
+            background: transparent;
+            border: 2px solid brown;
             border-radius: 8px;
             cursor: pointer;
             font-weight: bolder;
             font-family: 'Times New Roman', Times, serif;
-            font-size: larger;
+            font-size: 1.3rem;
         }
-        #entries{
-            position: absolute;
-            bottom:32%;
-            left:38% ;
-            font-weight: bolder;
-            font-size: 2rem;
-            font-family: 'Times New Roman', Times, serif;
-            color: rgb(26, 255, 0);
-            border: 2px solid black;
-            background-color: chocolate;
-            padding: 0.5px;
-            border-radius: 8px;
-        }
+       
+        
         #tbutton {
             position: absolute;
             cursor: pointer;
@@ -174,18 +163,18 @@
         }
         #box {
             position: absolute;
-            bottom: 20%;
+            bottom: 18%;
             color: black;
             left: 40%;
             font-family: 'Times New Roman', Times, serif;
-            font-size: large;
-            font-weight: bold;
-            border: 2px solid rgb(210, 22, 22);
+            font-size: 1.3em;
+            font-weight: 800;
+            border: 3px solid  #162938;
             width: 20%;
-            height: 15%;
+            height: 25%;
             text-align: center;
             border-radius: 8px;
-            background-color: cornflowerblue;
+            background: white;
         }
     </style>
     
